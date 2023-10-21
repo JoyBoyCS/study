@@ -1,0 +1,20 @@
+from math import pi
+
+def circle(r):
+    if r<0:
+        raise Exception('半径不允许为负数')
+    if r>=0:
+        A=pi*r*r
+        C=2*pi*r
+        return A,C  
+    
+if __name__ == '__main__':
+    try:
+        r = float(input('请输入圆的半径：'))
+        A,C=circle(r)
+        print(f'圆的面积为：{A:.2f}')
+        print(f'圆的周长为：{C:.2f}')
+    except ValueError:
+        print('输入内容不正确！请输入数字')
+    except Exception as e:
+        print(e)
